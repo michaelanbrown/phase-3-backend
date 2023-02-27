@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/" do
-    "Welcome to Michaela's Property Management System!".to_json
+    "Welcome to Michaela's Property Management System! Use the '/properties' end point to get to the properties list, the '/types' endpoint to get to the types list, and the '/records' endpoint to get to the records list".to_json
   end
 
   get "/properties" do
