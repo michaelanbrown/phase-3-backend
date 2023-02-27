@@ -46,6 +46,12 @@ class ApplicationController < Sinatra::Base
     change_property.to_json
   end
 
+  delete "/properties/:id" do
+    goodbye_property = Property.find(params[:id])
+    goodbye_property.destroy
+    goodbye_property.to_json
+  end
+
   get "/types" do
     Type.all.to_json
   end
