@@ -7,15 +7,15 @@ I have incldued three models:
 2. Record
 3. Type
 
-## Property
+### Property
 
 The Property model belongs_to :type and has_many :records.
 
-## Record
+### Record
 
 The Record model belongs_to :property.
 
-## Type
+### Type
 
 The Type model has_many :properties.
 
