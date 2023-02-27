@@ -23,4 +23,9 @@ class ApplicationController < Sinatra::Base
     Record.all.to_json
   end
 
+  get "/records/:id" do
+    record = Record.find(params[:id])
+    record.to_json
+  end
+
 end
