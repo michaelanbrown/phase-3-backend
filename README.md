@@ -117,6 +117,8 @@ My Property Management system contains all properties that my significant other 
 
 ## Fork and Clone
 
+Feel free to fork and clone this to use as your own!
+Be aware of the seeded data.
 
 ## Contributing
 
