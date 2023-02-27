@@ -9,13 +9,15 @@ I have incldued three models:
 
 ## Property
 
+The Property model belongs_to :type and has_many :records.
 
 ## Record
 
+The Record model belongs_to :property.
 
 ## Type
 
-
+The Type model has_many :properties.
 
 ## Description
 
