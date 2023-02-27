@@ -23,7 +23,14 @@ The Type model has_many :properties.
 
 ### Property
 
+The Property schema contains all pertinent information about each property owned and/or each property that we are looking to purchase. The properties connect to their type via the two columns below:
 
+```bash
+t.integer "type_id"
+```
+```bash
+t.index ["type_id"], name: "index_properties_on_type"
+```
 
 ### Record
 
