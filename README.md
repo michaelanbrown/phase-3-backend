@@ -1,138 +1,90 @@
-# Phase 3 Project Guidelines
+# Michaela's Property Management System
 
-## Learning Goals
+## Models
 
-- Build a web basic API with Sinatra and Active Record to support a React
-  frontend
+I have incldued three models:
+1. Property
+2. Record
+3. Type
 
-## Introduction
+## Past Travels
 
-Congrats on getting through all the material for Phase 3! Now's the time to put
-it all together and build something from scratch to reinforce what you know and
-expand your horizons.
+Want to know every place my boyfriend and I have been to together? Check it out here!
 
-The focus of this project is **building a Sinatra API backend** that uses
-**Active Record** to access and persist data in a database, which will be used
-by a separate **React frontend** that interacts with the database via the API.
+## Future Travels
 
-## Requirements
+Everybody wants to go places, right? Come here to see what we want to do next!
 
-For this project, you must:
+## Memories
 
-- Use Active Record to interact with a database.
-- Have at least two models with a one-to-many relationship.
-- At a minimum, set up the following API routes in Sinatra:
-  - create and read actions for both models
-  - full CRUD capability for one of the models: 
-  The update action should be implemented using a form that is 
-  pre-filled with existing values for the object. On submission of 
-  the form, the object should update. Note: Using a like button or 
-  similar will not meet the update requirement.
-- Build a separate React frontend application that interacts with the API to
-  perform CRUD actions.
-- Implement proper front end state management. You should be updating state using a
-  setState function after receiving your response from a POST, PATCH, or DELETE 
-  request. You should NOT be relying on a GET request to update state. 
-- Use good OO design patterns. You should have separate classes for each of your
-  models, and create instance and class methods as necessary. 
-- Routes in your application (both client side and back end) should follow RESTful
-  conventions.
-- Use your back end optimally. Pass JSON for related associations to the front 
-  end from the back end. You should use active record methods in your controller to grab
-  the needed data from your database and provide as JSON to the front end. You
-  should NOT be relying on filtering front end state or a separate fetch request to
-  retrieve related data.
+A showcase of some of my favorite memories from our trips together!
 
-For example, build a todo list application with a React frontend interface and a
-Sinatra backend API, where a user can:
 
-- **Create** a new todo
-- **Read** a list of all todos
-- **Update** an individual todo
-- **Delete** a todo
+## Description
 
-A `Todo` can be tagged with a `Category`, so that each todo _belongs to_ a
-category and each category _has many_ todos.
+The Navigation Bar at the top will allow you to pick between what page you would like to view! It will automatically direct you to the Featured Home Page, but from there it is up to you what to see next!
+In the Past Travels page you will be able to filter the travels by state!
+Within the Future Travels page, you are able to click a button to view a form, which will then allow you to submit new travel plans for the future. There is also a delete button and a complete button. With the delete button, if plans are canceled or changed you can delete the old information, and if needed use the form to create a new travel plan! With the completed button, it will create add the data to the Past Travels page.
+The Memories tab allows a place for you to house what you want to remember about your travels. This also includes a form for new memories, a delete button, and you can filter this by state too!
 
-## Getting Started
-
-### Backend Setup
-
-This repository has all the starter code needed to get a Sinatra backend up and
-running. [**Fork and clone**][fork link] this repository to get started. Then, run
-`bundle install` to install the gems.
-
-**Important**: Be sure you fork a copy of the repo into your GitHub account
-before cloning it. You can do this by using the link above or by clicking the
-"Octocat" button at the top of this page, then clicking "Fork" in the upper
-right corner of the repo page.
-
-[fork link]: https://github.com/learn-co-curriculum/phase-3-sinatra-react-project/fork
-
-The `app/controllers/application_controller.rb` file has an example GET route
-handler. Replace this route with routes for your project.
-
-You can start your server with:
-
-```console
-$ bundle exec rake server
+Button to display the form:
+```bash
+<button onClick={handleWantClick}>{wantValue}</button>
 ```
 
-This will run your server on port
-[http://localhost:9292](http://localhost:9292).
-
-### Frontend Setup
-
-Your backend and your frontend should be in **two different repositories**.
-
-Create a new repository in a **separate folder** with a React app for your
-frontend. To do this, `cd` out of the backend project directory, and use
-[create-react-app][] to generate the necessary code for your React frontend:
-
-```console
-$ npx create-react-app my-app-frontend
+Form to submit new data about:
+```bash
+<form onSubmit={handleFutureSubmit}>
 ```
 
-After creating the project locally, you should also
-[create a repository on GitHub][create repo] to host your repo and help
-collaborate, if you're working with a partner.
-
-### Fetch Example
-
-Your React app should make fetch requests to your Sinatra backend! Here's an
-example:
-
-```js
-fetch("http://localhost:9292/test")
-  .then((r) => r.json())
-  .then((data) => console.log(data));
+Delete button:
+```bash
+<button onClick={handleFutureDelete} className="delete">🗑️</button>
 ```
 
-## Project Tips
+Complete button:
+```bash
+<button onClick={handleCompleteDelete} className="complete">Complete 🗸</button>
+```
 
-- This project is intended to focus more on the backend than the frontend, so
-  try and keep the React side of things relatively simple. Focus on working with
-  Active Record and performing CRUD actions. What are some interesting queries you can write? What kinds of questions can you ask of your data?
-- Once you have a project idea, come up with a domain model and decide what
-  relationships exist between the models in your application. Use a tool like
-  [dbdiagram.io][] to help visualize your models.
-- Decide on your API endpoints. What data should they return? What kind of CRUD
-  action should they perform? What data do they need from the client?
-- Use [Postman][postman download] to test your endpoints.
-- Use `binding.pry` to debug your requests on the server. It's very helpful to use a
-  `binding.pry` in your controller within a route to see what `params` are being
-  sent.
-- Use the [Network Tab in the Dev Tools][network tab] in the frontend to debug
-  your requests.
+State filter:
+```bash
+<div id="filterstate">Filter by State:{' '}
+    <select name="type" onChange={handleStateFilter}>
+            <option value="" defaultValue={''}></option>
+            {optionList}
+    </select>
+</div>
+```
 
-## Resources
+## Form Example
 
-- [create-react-app][]
-- [dbdiagram.io][]
-- [Postman][postman download]
+```python
+# Form HTML
 
-[create-react-app]: https://create-react-app.dev/docs/getting-started
-[create repo]: https://docs.github.com/en/get-started/quickstart/create-a-repo
-[dbdiagram.io]: https://dbdiagram.io/
-[postman download]: https://www.postman.com/downloads/
-[network tab]: https://developer.chrome.com/docs/devtools/network/
+            <form onSubmit={handleFutureSubmit}>
+                Enter New Travel Plans Here:
+                <br></br>
+                <input type="text" id="city" value={formData.city} onChange={handleFutureChange} placeholder="City/Activity"/>
+                <br></br>
+                <input type="text" id="state" value={formData.state} onChange={handleFutureChange} placeholder="State"/>
+                <br></br>
+                <input type="text" id="date" value={formData.date} onChange={handleFutureChange} placeholder="Date"/>
+                <br></br>
+                <input type="text" id="reason" value={formData.reason} onChange={handleFutureChange} placeholder="Reason for the trip"/>
+                <br></br>
+                <input type="text" id="photo" value={formData.photo} onChange={handleFutureChange} placeholder="Image URL"/>
+                <br></br>
+                <button>Submit</button>
+            </form>
+```
+
+## Fork and Clone
+If you would like to clone this into your environment an dmake it your own, you may change the password in /src/components/App.js line 12.
+
+## Contributing
+
+Suggestions are welcome.
+
+## Acknowledgment
+Photos are taken by Jonathan Peterson and myself.
