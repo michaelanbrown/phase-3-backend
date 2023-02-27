@@ -49,37 +49,20 @@ The Type schema contains all different property types (i.e. Single family, Multi
 
 ## Description
 
+My Property Management system contains all properties that my significant other and I own or are interested in purchasing. There are many functions within the controller that can be utilized to manage said properties:
+1. Access all information in our Property table
 
+2. Access all information in our Record table
 
-Button to display the form:
-```bash
-<button onClick={handleWantClick}>{wantValue}</button>
-```
+3. Access all information in our Type table
 
-Form to submit new data about:
-```bash
-<form onSubmit={handleFutureSubmit}>
-```
+4. Add a property to the Property table
 
-Delete button:
-```bash
-<button onClick={handleFutureDelete} className="delete">🗑️</button>
-```
+5. Edit a property in the Property table
 
-Complete button:
-```bash
-<button onClick={handleCompleteDelete} className="complete">Complete 🗸</button>
-```
+6. Delete a property from the Property table
 
-State filter:
-```bash
-<div id="filterstate">Filter by State:{' '}
-    <select name="type" onChange={handleStateFilter}>
-            <option value="" defaultValue={''}></option>
-            {optionList}
-    </select>
-</div>
-```
+7. Add a record to the Record table
 
 ## Form Example
 
