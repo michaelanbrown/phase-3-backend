@@ -50,26 +50,26 @@ The Type schema contains all different property types (i.e. Single family, Multi
 ## Description
 
 My Property Management system contains all properties that my significant other and I own or are interested in purchasing. There are many functions within the controller that can be utilized to manage said properties:
-1. Access all information in our Property table
-  a. Get request to "/properties"
+1. Access all information in our Property table:
+  Get request to "/properties"
 
-2. Access all information in our Record table
-  a. Get request to "/records"
+2. Access all information in our Record table:
+  Get request to "/records"
 
-3. Access all information in our Type table
-  a. Get request to "/type"
+3. Access all information in our Type table:
+  Get request to "/type"
 
-4. Add a property to the Property table
-  a. Post request to "/properties"
+4. Add a property to the Property table:
+  Post request to "/properties"
 
-5. Edit a property in the Property table
-  a. Patch request to "/properties/:id"
+5. Edit a property in the Property table:
+  Patch request to "/properties/:id"
 
-6. Delete a property from the Property table
-  a. Delete request to "/properties/:id"
+6. Delete a property from the Property table:
+  Delete request to "/properties/:id"
 
-7. Add a record to the Record table
-  a. Post request to "/records"
+7. Add a record to the Record table:
+  Post request to "/records"
 
 ## Form Example
 
