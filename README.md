@@ -34,7 +34,14 @@ t.index ["type_id"], name: "index_properties_on_type"
 
 ### Record
 
+The Record schema contains all pertinent information about each owned property's finances (i.e. the mortgage payment, hoa payment, etc). The records connect to their property via the two columns below:
 
+```bash
+t.integer "property_id"
+```
+```bash
+.index ["property_id"], name: "index_records_on_property"
+```
 
 ### Type
 
