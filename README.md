@@ -19,6 +19,20 @@ The Record model belongs_to :property.
 
 The Type model has_many :properties.
 
+## Schemas
+
+### Property
+
+
+
+### Record
+
+
+
+### Type
+
+
+
 ## Description
 
 
