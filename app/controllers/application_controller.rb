@@ -15,6 +15,21 @@ class ApplicationController < Sinatra::Base
     property.to_json
   end
 
+  post "/properties" do
+    new_property = Property.create(
+      street_address: params[:street_address],
+      city: params[:city],
+      state: params[:state],
+      purchase_price: params[:purchase_price],
+      square_feet: params[:square_feet],
+      garage_spaces: params[:garage_spaces],
+      link: params[:link],
+      type: Type.find_by(property_type: params[:type]),
+      flip_status: params[:flip_status]
+    )
+    new_property.to_json
+  end
+
   get "/types" do
     Type.all.to_json
   end
