@@ -7,25 +7,19 @@ I have incldued three models:
 2. Record
 3. Type
 
-## Past Travels
+## Property
 
-Want to know every place my boyfriend and I have been to together? Check it out here!
 
-## Future Travels
+## Record
 
-Everybody wants to go places, right? Come here to see what we want to do next!
 
-## Memories
+## Type
 
-A showcase of some of my favorite memories from our trips together!
 
 
 ## Description
 
-The Navigation Bar at the top will allow you to pick between what page you would like to view! It will automatically direct you to the Featured Home Page, but from there it is up to you what to see next!
-In the Past Travels page you will be able to filter the travels by state!
-Within the Future Travels page, you are able to click a button to view a form, which will then allow you to submit new travel plans for the future. There is also a delete button and a complete button. With the delete button, if plans are canceled or changed you can delete the old information, and if needed use the form to create a new travel plan! With the completed button, it will create add the data to the Past Travels page.
-The Memories tab allows a place for you to house what you want to remember about your travels. This also includes a form for new memories, a delete button, and you can filter this by state too!
+
 
 Button to display the form:
 ```bash
@@ -80,11 +74,8 @@ State filter:
 ```
 
 ## Fork and Clone
-If you would like to clone this into your environment an dmake it your own, you may change the password in /src/components/App.js line 12.
+
 
 ## Contributing
 
 Suggestions are welcome.
-
-## Acknowledgment
-Photos are taken by Jonathan Peterson and myself.
