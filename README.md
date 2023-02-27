@@ -60,26 +60,59 @@ My Property Management system contains all properties that my significant other 
 8. Delete a property from the Property table via a delete request to "/properties/:id"
 9. Add a record to the Record table via a post request to "/records"
 
-## Form Example
+## Examples
 
 ```python
-# Form HTML
+# Get Request
+  get "/properties" do
+    Property.all.to_json
+  end
+```
 
-            <form onSubmit={handleFutureSubmit}>
-                Enter New Travel Plans Here:
-                <br></br>
-                <input type="text" id="city" value={formData.city} onChange={handleFutureChange} placeholder="City/Activity"/>
-                <br></br>
-                <input type="text" id="state" value={formData.state} onChange={handleFutureChange} placeholder="State"/>
-                <br></br>
-                <input type="text" id="date" value={formData.date} onChange={handleFutureChange} placeholder="Date"/>
-                <br></br>
-                <input type="text" id="reason" value={formData.reason} onChange={handleFutureChange} placeholder="Reason for the trip"/>
-                <br></br>
-                <input type="text" id="photo" value={formData.photo} onChange={handleFutureChange} placeholder="Image URL"/>
-                <br></br>
-                <button>Submit</button>
-            </form>
+```python
+# Post Request
+  post "/properties" do
+    new_property = Property.create(
+      street_address: params[:street_address],
+      city: params[:city],
+      state: params[:state],
+      purchase_price: params[:purchase_price],
+      square_feet: params[:square_feet],
+      garage_spaces: params[:garage_spaces],
+      link: params[:link],
+      type: Type.find_by(property_type: params[:type]),
+      flip_status: params[:flip_status]
+    )
+    new_property.to_json
+  end
+```
+
+```python
+# Patch Request
+  patch "/properties/:id" do
+    change_property = Property.find(params[:id])
+    change_property.update(
+      street_address: params[:street_address],
+      city: params[:city],
+      state: params[:state],
+      purchase_price: params[:purchase_price],
+      square_feet: params[:square_feet],
+      garage_spaces: params[:garage_spaces],
+      link: params[:link],
+      type: Type.find_by(property_type: params[:type]),
+      flip_status: params[:flip_status]
+    )
+    change_property.to_json
+  end
+```
+
+```python
+# Delete Request
+  delete "/properties/:id" do
+    goodbye_property = Property.find(params[:id])
+    goodbye_property.destroy
+    goodbye_property.to_json
+  end
 ```
 
 ## Fork and Clone
