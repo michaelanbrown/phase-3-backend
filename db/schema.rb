@@ -10,15 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_26_031719) do
+ActiveRecord::Schema.define(version: 2023_02_27_005358) do
 
   create_table "properties", force: :cascade do |t|
     t.string "street_address"
     t.string "city"
     t.string "state"
     t.integer "purchase_price"
-    t.integer "bedrooms"
-    t.integer "bathrooms"
     t.integer "square_feet"
     t.integer "garage_spaces"
     t.string "link"
