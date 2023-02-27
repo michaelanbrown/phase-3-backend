@@ -45,7 +45,7 @@ t.integer "property_id"
 
 ### Type
 
-
+The Type schema contains all different property types (i.e. Single family, Multifamily, Condo/Townhouse, etc).
 
 ## Description
 
