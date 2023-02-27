@@ -76,4 +76,10 @@ class ApplicationController < Sinatra::Base
     )
   end
 
+  delete "/records/:id" do
+    new_record = Record.find(params[:id])
+    new_record.destroy
+    new_record.to_json
+  end
+
 end
