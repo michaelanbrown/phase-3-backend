@@ -10,6 +10,11 @@ class ApplicationController < Sinatra::Base
     Property.all.to_json
   end
 
+  get "/properties/:id" do
+    property = Property.find(params[:id])
+    property.to_json
+  end
+
   get "/types" do
     Type.all.to_json
   end
