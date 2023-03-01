@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/properties" do
-    Property.all.to_json
+    Property.all.to_json(include: :type)
   end
 
   get "/properties/:id" do
