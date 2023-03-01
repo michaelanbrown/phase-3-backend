@@ -12,7 +12,7 @@ class ApplicationController < Sinatra::Base
 
   get "/properties/:id" do
     property = Property.find(params[:id])
-    property.to_json
+    property.to_json(include: :records)
   end
 
   post "/properties" do
