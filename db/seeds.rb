@@ -12,9 +12,9 @@ Property.create(street_address: "118 Mercy Circle", city: "Hardeeville", state: 
 Property.create(street_address: "35 Heritage Rd", city: "Signal Mountain", state: "TN", purchase_price: nil, square_feet: 3530, garage_spaces: 0, link: "https://i.imgur.com/3FeNq8B.jpg", type: Type.find_by(property_type: "Multifamily"), flip_status: nil)
 Property.create(street_address: "4396 Amnicola Hwy", city: "Chattanooga", state: "TN", purchase_price: nil, square_feet: 5464, garage_spaces: nil, link: "https://i.imgur.com/ZmGMcpI.jpg", type: Type.find_by(property_type: "Commercial/Business"), flip_status: nil)
 
-Record.create(mortgage_payment: 1735, hoa_payment: 179, property_management_payment: 100, gross_income: 1900, occupancy: true, property: Property.find_by(street_address: "2504 Las Palomas Loop"))
-Record.create(mortgage_payment: 1747, hoa_payment: 185, property_management_payment: 100, gross_income: 2200, occupancy: true, property: Property.find_by(street_address: "2504 Las Palomas Loop"))
-Record.create(mortgage_payment: 2500, hoa_payment: nil, property_management_payment: 100, gross_income: 1750, occupancy: true, property: Property.find_by(street_address: "1211 Zinfandel Drive"))
-Record.create(mortgage_payment: 2700, hoa_payment: nil, property_management_payment: 100, gross_income: 2750, occupancy: true, property: Property.find_by(street_address: "1211 Zinfandel Drive"))
+Record.create(mortgage_payment: 1735, hoa_payment: 179, property_management_payment: 100, gross_income: 1900, property: Property.find_by(street_address: "2504 Las Palomas Loop"))
+Record.create(mortgage_payment: 1747, hoa_payment: 185, property_management_payment: 100, gross_income: 2200, property: Property.find_by(street_address: "2504 Las Palomas Loop"))
+Record.create(mortgage_payment: 2500, hoa_payment: nil, property_management_payment: 100, gross_income: 1750, property: Property.find_by(street_address: "1211 Zinfandel Drive"))
+Record.create(mortgage_payment: 2700, hoa_payment: nil, property_management_payment: 100, gross_income: 2750, property: Property.find_by(street_address: "1211 Zinfandel Drive"))
 
 puts "✅ Done seeding!"

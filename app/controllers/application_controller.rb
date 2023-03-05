@@ -71,9 +71,14 @@ class ApplicationController < Sinatra::Base
       hoa_payment: params[:hoa_payment],
       property_management_payment: params[:property_management_payment],
       gross_income: params[:gross_income],
-      occupancy: params[:occupancy],
       property: Property.find_by(street_address: params[:property])
     )
+  end
+
+  delete "/records/:id" do
+    goodbye_record = Record.find(params[:id])
+    goodbye_record.destroy
+    goodbye_record.to_json
   end
 
 end
