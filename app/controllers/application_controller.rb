@@ -69,6 +69,7 @@ class ApplicationController < Sinatra::Base
       gross_income: params[:gross_income],
       property: Property.find_by(street_address: params[:property])
     )
+    new_record.to_json
   end
 
   delete "/records/:id" do
